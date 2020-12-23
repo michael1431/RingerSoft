@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Api Integration Using Javascript</title>
+</head>
+<body>
+   
+   <div id="parentId">
+
+   </div>
+
+
+
+
+
+   <script>
+
+      var parentId = document.getElementById('parentId');
+
+      fetch('https://jsonplaceholder.typicode.com/posts')
+	  // Url ta paste korlam
+         .then(response => response.json())
+		 // Data gulo json format e niye aslam
+         .then(data => {
+            let ressult = data;
+			// data gulo kivabe ache check kore then akta variable e raklam
+			// jodi data gulo onno format e takhe tahole access korar jonno data.response.short_title avabe likte hobe ba onno babe
+            var node = document.createElement("p");  
+				// data gulo show korar jonno akta p tag nilam
+				// Loop chalalam map er sahajje
+            ressult.map(res=>{
+               var textnode = document.createTextNode(res.title); 
+				// just title ta niye asbo tai res diye title access kortechi
+               node.appendChild(textnode); 
+				// result ja pacchi ta p tag e append kore dicchi
+               parentId.appendChild(textnode);
+			   // then every time ata k div tag e append kortechi
+            })
+         });
+   </script>
+</body>
+</html>

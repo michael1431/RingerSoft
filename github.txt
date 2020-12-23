@@ -1,0 +1,6 @@
+1. git init
+2. git add .
+3. git remote add origin https://github.com/michaelsutradhar/RingerSoft-_Limited.
+4. git commit -m 'RingerSoft'
+5. git push -u origin master
+

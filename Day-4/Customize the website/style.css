@@ -1,0 +1,58 @@
+
+body{
+
+	/*color: #666666; */
+
+	background-color:#00FF00;
+	margin:0px;
+	padding:0px;
+}
+
+#company{
+
+	font-weight: bold;
+	
+}
+
+#company-text{
+
+	font-weight: bold;
+	color: rgb(255,255,255);
+}
+
+.nav-item{
+	font-weight: bold;
+}
+
+#footersite{
+
+
+  background: #0b0808;
+  padding-top: 700px;
+  margin-top: 1700px; 
+  max-height:140px;
+     /*
+     background: #070100;
+     padding: 23px 0px;
+     border-top: #cf2323 solid 2px;
+     border-bottom: #cf2323 solid 2px; */
+}
+
+#heading{
+
+	margin-top: 300px;
+	font-weight: bold;
+}
+
+#footer-right{
+
+	float: right;
+
+}
+
+.carousel-item img{
+
+	height: 350px; 
+	width: 960px;
+}
+

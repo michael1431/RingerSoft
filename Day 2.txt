@@ -1,0 +1,120 @@
+   
+            	 Day-2
+
+  Working with laravel collective form:
+
+  1. Go to laravelcollective.com and follow the process
+  2. How to create a form by using laravel collective:
+
+   	     {{ Form::label('name', 'Name') }}
+
+	     {{ Form::text('name', old('name'), ['class' => 'form-control col-md-4', 'placeholder' => 'Enter Your Name']) }}
+
+             {{ Form::label('address', 'Address') }}
+
+	     {{ Form::text('address',old('address'), ['class' => 'form-control col-md-4','placeholder' => 'Enter Your Address']) }}
+
+	     {{ Form::label('website', 'Website') }}
+
+	     {{ Form::text('website',old('website'), ['class' => 'form-control col-md-4', 'placeholder' => 'Enter Your Website']) }}
+
+	     {{ Form::label('email', 'Email') }}
+
+	     {{ Form::text('email',old('email'), ['class' => 'form-control col-md-4','placeholder' => 'Enter Your Email']) }}
+		<br>
+
+	    <button type="submit" class="btn btn-success">@if(isset($user->name)) Update Information @else Save Information @endif</button>
+
+ 3. Create create.blade.php page using laravel collective route:
+
+                      <div class="card-body">
+
+
+			   {!! Form::open(['route' => 'crud.store', 'method' => 'POST']) !!}
+
+				@include('messages')
+
+				@include('crud.form')
+
+				{!! Form::close() !!}
+ 
+			</div>
+ 4. Create edit.blade.php page
+  
+                         <div class="card-body">
+							
+			     {!! Form::model($user,['route' =>['crud.update',$user->id], 'method' => 'POST']) !!}
+
+				@include('messages')
+
+			        @include('crud.form')
+
+				 {!! Form::close() !!}
+
+			 </div>
+
+
+
+ 5. How to delete data with confirmation message using laravel collective form:
+
+	             {!! Form::open(['method' => 'POST', 'route' => ['crud.delete',$cr->id], 'style' => 'float:right', 'onsubmit' => ' return ConfirmDelete()']) !!}
+
+                     {!! Form::button('Delete', array('type' => 'submit','class' => 'btn btn-danger')) !!}
+
+                     {!! Form::close() !!}
+	
+
+           <script>
+
+          function ConfirmDelete()
+          {
+          var x = confirm("Are you sure you want to delete?");
+          if (x)
+          return true;
+          else
+          return false;
+         }
+
+        </script>
+
+ 6.Email validation:
+   
+      'email' => 'email:rfc,dns|required|max:100|unique:cruds',
+            //'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|email|max:100|unique:cruds',
+			//'email'=>'required|email|max:100|unique:cruds',
+
+     'email.required'=>'Please Enter Your Email',
+ 7. To optimize the code separate the folder and use include method
+    @include('header')
+
+ 8.To show the user create and edit page separately,i used this code in header page
+    
+    <div class="card-header">
+
+   <h3 class="btn btn-info">@if(isset($user->name))Update Company Details @else Add Company Details @endif</h3>
+				
+   </div>
+ 9.Authentication command:
+ 			
+			composer require laravel/ui
+                        php artisan ui vue --auth
+
+	Download the npm to show the design of login page.
+    
+            a) Download node.js package and install it.
+	    b) run npm install command
+	    // (Optional)run the  npm install --save-dev cross-env command
+	    c) npm run dev
+
+
+    
+
+
+			
+ 	
+
+
+
+
+
+
